@@ -59,16 +59,14 @@ module leaf_base() {
                       leaf_thick]);
             translate([hinge_width-corner_radius-leaf_thick,
                        corner_radius,
-                       0])
+                       0]) {
                 cylinder(r=corner_radius, h=leaf_thick);
-            translate([hinge_width-corner_radius-leaf_thick,
-                       hinge_height-corner_radius,
-                       0])
-                cylinder(r=corner_radius, h=leaf_thick);
-            translate([hinge_width-corner_radius-leaf_thick,
-                       corner_radius,
-                       0])
+                translate([0,
+                           hinge_height - 2*corner_radius,
+                           0])
+                    cylinder(r=corner_radius, h=leaf_thick);
                 cube([corner_radius, hinge_height - 2*corner_radius, leaf_thick]);
+                }
         }
         rotate([-90, 0, 0])
             linear_extrude(hinge_height)
