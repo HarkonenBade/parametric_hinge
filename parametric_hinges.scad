@@ -36,6 +36,8 @@ hole_csk_dia = 7; // .1
 $fn=32;
 // Clearancing, appears between the fingers and around the print in place axis
 clearance = 0.3;
+// How the model is setup
+mode = "print"; // [print: Ready for Printing, fold: Folded, sep: Seperated]
 
 // ====================
 
@@ -171,5 +173,25 @@ module right() {
         }
     }
 }
-left();
-mirror([1, 0, 0]) right();
+
+module hinge(mode) {
+    if(mode == "print") {
+        left();
+        mirror([1, 0, 0])
+            right();
+    } else if(mode == "fold") {
+        left();
+        translate([0, 0, hinge_thick])
+            rotate([0, 180, 0])
+            mirror([1, 0, 0])
+            right();
+    } else if(mode == "sep") {
+        translate([hinge_thick, 0, 0])
+            left();
+        translate([-hinge_thick, 0, 0])
+            mirror([1, 0, 0])
+            right();
+    }
+}
+
+hinge(mode);
