@@ -1,13 +1,13 @@
 // Height of the hinge inline with the axis
-hinge_height = 40; // .1
+hinge_height = 39; // .1
 // Width of the hinge across the plate including the axis
-hinge_width = 20; // .1
+hinge_width = 21; // .1
 // Thickness of the hinge when folded, same as the diameter of the axis
 hinge_thick = 6; // .1
 // Number of fingers on the hinge, must be odd
 hinge_fingers = 7; // [3:2:21]
 // Radius of the hinge plate corners
-corner_radius = 7.5;
+corner_radius = 7.5; // .1
 
 /* [Axis] */
 // Axis type
@@ -23,13 +23,13 @@ axis_pin = 3; // .1
 // Mounting hole type
 hole_style = "csk"; // [plain: Plain Holes, csk: Countersunk]
 // Mounting hole drill size
-hole_drill = 3.5; // .1
+hole_drill = 4.5; // .1
 // Number of holes per plate
 hole_number = 3; // [0:1:10]
 // Hole spacing, 0 for even spacing
 hole_spacing = 0; // .1
 // Counter sink outer dia for csk style
-hole_csk_dia = 7; // .1
+hole_csk_dia = 9; // .1
 
 /* [Advanced] */
 // Circle facets
